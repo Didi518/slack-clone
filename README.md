@@ -47,14 +47,16 @@ Ce projet est un clone de Slack développé avec Next.js, React, et Tailwind CSS
    ```
 2. Installez les dépendances :
 
-```bash
+   ```bash
    npm install
-```
+   ```
 
 ou
 
-```bash
+    ```bash
+
 yarn install
+
 ```
 
 3. Configurez les variables d'environnement :
@@ -62,18 +64,16 @@ yarn install
 
 4. Lancez le serveur de développement :
 
-```bash
+   ```bash
    npm run dev
-```
+    ```
 
 ou
 
-```bash
+    ```bash
+
 yarn dev
+
 ```
 
 5. Ouvrez http://localhost:3000 dans votre navigateur pour voir l'application.
-
-```
-
-```
