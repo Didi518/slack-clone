@@ -51,13 +51,11 @@ Ce projet est un clone de Slack développé avec Next.js, React, et Tailwind CSS
    npm install
    ```
 
-ou
+   ou
 
-    ```bash
-
-yarn install
-
-```
+   ```bash
+   yarn add
+   ```
 
 3. Configurez les variables d'environnement :
    Créez un fichier .env.local à la racine du projet et ajoutez les variables nécessaires pour l'authentification et autres configurations.
@@ -66,14 +64,12 @@ yarn install
 
    ```bash
    npm run dev
-    ```
+   ```
 
-ou
+   ou
+   ```bash
+   yarn dev
+   ```
 
-    ```bash
-
-yarn dev
-
-```
 
 5. Ouvrez http://localhost:3000 dans votre navigateur pour voir l'application.
