@@ -26,4 +26,4 @@ Ce projet est un clone de Slack développé avec Next.js, React, et Tailwind CSS
 
 ## Installation
 
-1. Clonez le dépôt : [text](https://github.com/Didi518/slack-clone.git) - https://github.com/Didi518/slack-clone.git
+1. Clonez le dépôt : [Dépôt](https://github.com/Didi518/slack-clone.git)
