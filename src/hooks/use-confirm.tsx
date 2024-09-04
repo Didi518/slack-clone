@@ -23,22 +23,21 @@ export const useConfirm = (
       setPromise({ resolve });
     });
 
-  const handleClose = () => {
+  const handleClose = (value: boolean) => {
+    promise?.resolve(value);
     setPromise(null);
   };
 
-  const handleCancel = () => {
-    promise?.resolve(false);
-    handleClose();
-  };
-
-  const handleConfirm = () => {
-    promise?.resolve(true);
-    handleClose();
-  };
+  const handleCancel = () => handleClose(false);
+  const handleConfirm = () => handleClose(true);
 
   const ConfirmDialog = () => (
-    <Dialog open={promise !== null}>
+    <Dialog
+      open={promise !== null}
+      onOpenChange={(open) => {
+        if (!open) handleCancel();
+      }}
+    >
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
