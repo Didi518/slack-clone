@@ -28,6 +28,6 @@ export const useGetMessages = ({
   return {
     results,
     status,
-    loadMore: () => loadMore(BATCH_SIZE)
+    loadMore: () => loadMore(BATCH_SIZE),
   };
 };
