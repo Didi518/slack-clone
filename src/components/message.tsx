@@ -7,6 +7,7 @@ import { useUpdateMessage } from "@/features/messages/api/use-update-message";
 import { useToggleReaction } from "@/features/reactions/api/use-toggle-reaction";
 
 import { useConfirm } from "@/hooks/use-confirm";
+import { usePannel } from "@/hooks/use-pannel";
 import { cn } from "@/lib/utils";
 
 import { Hint } from "./hint";
@@ -68,6 +69,7 @@ export const Message = ({
   threadImage,
   threadTimestamp,
 }: MessageProps) => {
+  const { onOpenMessage, onClose, parentMessageId } = usePannel();
   const [ConfirmDialog, confirm] = useConfirm(
     "Supprimer le message",
     "Vous êtes sur le point de supprimer un message. Cette action est irréversible."
@@ -103,7 +105,9 @@ export const Message = ({
         onSuccess: () => {
           toast.success("Message supprimé");
 
-          // TODO: fermer le fil si il est ouvert
+          if (parentMessageId === id) {
+            onClose();
+          }
         },
         onError: () => {
           toast.error("Echec de la suppression du message");
@@ -173,7 +177,7 @@ export const Message = ({
               isAuthor={isAuthor}
               isPending={isPending}
               handleEdit={() => setEditingId(id)}
-              handleThread={() => {}}
+              handleThread={() => onOpenMessage(id)}
               handleDelete={handleRemove}
               handleReaction={handleReaction}
               hideThreadButton={hideThreadButton}
@@ -244,7 +248,7 @@ export const Message = ({
             isAuthor={isAuthor}
             isPending={isPending}
             handleEdit={() => setEditingId(id)}
-            handleThread={() => {}}
+            handleThread={() => onOpenMessage(id)}
             handleDelete={handleRemove}
             handleReaction={handleReaction}
             hideThreadButton={hideThreadButton}
