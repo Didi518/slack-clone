@@ -37,6 +37,7 @@ export const UserItem = ({
   variant,
 }: UserItemProps) => {
   const workspaceId = useWorkspaceId();
+
   const avatarFallback = label.charAt(0).toUpperCase();
 
   return (
