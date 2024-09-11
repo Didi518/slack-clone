@@ -4,6 +4,7 @@ import { useGetMember } from "@/features/members/api/use-get-member";
 import { useGetMessages } from "@/features/messages/api/use-get-messages";
 
 import { useMemberId } from "@/hooks/use-member-id";
+import { usePannel } from "@/hooks/use-pannel";
 import { MessageList } from "@/components/message-list";
 
 import { ChatInput } from "./chat-input";
@@ -17,6 +18,7 @@ interface ConversationProps {
 
 export const Conversation = ({ id }: ConversationProps) => {
   const memberId = useMemberId();
+  const { onOpenProfile } = usePannel();
   const { data: member, isLoading: memberLoading } = useGetMember({
     id: memberId,
   });
@@ -35,7 +37,7 @@ export const Conversation = ({ id }: ConversationProps) => {
       <Header
         memberName={member?.user.name}
         memberImage={member?.user.image}
-        onClick={() => {}}
+        onClick={() => onOpenProfile(memberId)}
       />
       <MessageList
         data={results}
