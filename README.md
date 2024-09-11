@@ -48,22 +48,18 @@ Découvrez la version en ligne : [Clone de Slack](https://slack-clone-xi-hazel.v
    ```
 
 3. Créez un fichier .env à la racine du projet avec vos variables d'environnement :
-   ```bash
+   ```env
    NEXTAUTH_URL= <br />
    NEXTAUTH_SECRET= <br />
    CONVEX_URL= <br />
+
+# Ajoutez d'autres variables d'environnement nécessaires ici
    ```
 
-```bash
-# Ajoutez d'autres variables d'environnement nécessaires ici
-
-```
-
 4. Démarrez le serveur de développement :
-
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 Ouvrez http://localhost:3000 dans votre navigateur pour voir l'application en action.
 
